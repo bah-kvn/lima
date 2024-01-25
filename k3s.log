@@ -1,0 +1,36 @@
+limactl start k3s
+INFO[0000] Using the existing instance "k3s"
+INFO[0000] Starting the instance "k3s" with VM driver "qemu"
+INFO[0000] QEMU binary "/opt/homebrew/bin/qemu-system-aarch64" seems properly signed with the "com.apple.security.hypervisor" entitlement
+INFO[0000] [hostagent] hostagent socket created at /Users/kevinhansen/.lima/k3s/ha.sock
+INFO[0000] [hostagent] Starting QEMU (hint: to watch the boot progress, see "/Users/kevinhansen/.lima/k3s/serial*.log")
+INFO[0000] SSH Local Port: 50932
+INFO[0000] [hostagent] Waiting for the essential requirement 1 of 2: "ssh"
+INFO[0010] [hostagent] Waiting for the essential requirement 1 of 2: "ssh"
+INFO[0011] [hostagent] The essential requirement 1 of 2 is satisfied
+INFO[0011] [hostagent] Waiting for the essential requirement 2 of 2: "user session is ready for ssh"
+INFO[0022] [hostagent] Waiting for the essential requirement 2 of 2: "user session is ready for ssh"
+INFO[0022] [hostagent] The essential requirement 2 of 2 is satisfied
+INFO[0022] [hostagent] Waiting for the optional requirement 1 of 1: "user probe 1/1"
+INFO[0022] [hostagent] Guest agent is running
+INFO[0022] [hostagent] Not forwarding TCP 127.0.0.53:53
+INFO[0022] [hostagent] Not forwarding TCP 0.0.0.0:22
+INFO[0022] [hostagent] Not forwarding TCP [::]:22
+INFO[0028] [hostagent] Forwarding TCP from 127.0.0.1:10010 to 127.0.0.1:10010
+INFO[0028] [hostagent] The optional requirement 1 of 1 is satisfied
+INFO[0028] [hostagent] Waiting for the guest agent to be running
+INFO[0028] [hostagent] Forwarding TCP from 127.0.0.1:6444 to 127.0.0.1:6444
+INFO[0028] [hostagent] Waiting for the final requirement 1 of 1: "boot scripts must have finished"
+INFO[0028] [hostagent] Forwarding TCP from [::]:6443 to 127.0.0.1:6443
+INFO[0031] [hostagent] Forwarding TCP from 127.0.0.1:10248 to 127.0.0.1:10248
+INFO[0031] [hostagent] Forwarding TCP from 127.0.0.1:10257 to 127.0.0.1:10257
+INFO[0031] [hostagent] Forwarding TCP from [::]:10250 to 127.0.0.1:10250
+INFO[0031] [hostagent] The final requirement 1 of 1 is satisfied
+INFO[0031] [hostagent] Copying config from /etc/rancher/k3s/k3s.yaml to /Users/kevinhansen/.lima/k3s/copied-from-guest/kubeconfig.yaml
+INFO[0031] READY. Run `limactl shell k3s` to open the shell.
+INFO[0031] Message from the instance "k3s":
+To run `kubectl` on the host (assumes kubectl is installed), run the following commands:
+------
+export KUBECONFIG="/Users/kevinhansen/.lima/k3s/copied-from-guest/kubeconfig.yaml"
+kubectl ...
+------
