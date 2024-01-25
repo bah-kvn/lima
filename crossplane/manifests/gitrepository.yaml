@@ -1,0 +1,22 @@
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  labels:
+    kustomize.toolkit.fluxcd.io/name: crossplane-add-on
+    kustomize.toolkit.fluxcd.io/namespace: crossplane-system
+    owner: crossplane
+  name: crossplane
+  namespace: flux-system
+spec:
+  ignore: |
+    # exclude file extensions
+    /**/*.md
+    /**/*.txt
+    /**/*.sh
+  interval: 10m
+  ref:
+    tag: 1.14.5-bb.0
+  timeout: 60s
+  url: https://repo1.dso.mil/big-bang/product/community/crossplane.git

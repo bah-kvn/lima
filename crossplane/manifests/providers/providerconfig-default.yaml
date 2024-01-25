@@ -1,0 +1,15 @@
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  labels:
+    provider: aws
+  name: default
+spec:
+  assumeRoleChain:
+    - roleARN: "${assume_role}"
+  credentials:
+    secretRef:
+      key: creds
+      name: aws-secret
+      namespace: flux-system
+    source: Secret

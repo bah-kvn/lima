@@ -28,7 +28,11 @@ images:
   arch: "aarch64"
 
 # Mounts are disabled in this template, but can be enabled optionally.
-mounts: []
+#mounts: []
+mounts:
+- location: "/usr/local/git/lima"
+- location: "/tmp/lima"
+  writable: true
 
 # containerd is managed by k3s, not by Lima, so the values are set to false here.
 containerd:
@@ -43,12 +47,15 @@ provision:
             curl -sfL https://get.k3s.io | sh -
     fi
     cd /usr/local/bin/ && curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+    snap install kubectl --classic
+
 probes:
 - script: |
     #!/bin/bash
     set -eux -o pipefail
     if ! timeout 30s bash -c "until test -f /etc/rancher/k3s/k3s.yaml; do sleep 3; done"; then
             echo >&2 "k3s is not running yet"
+            echo "k3s is not running yet"
             exit 1
     fi
     

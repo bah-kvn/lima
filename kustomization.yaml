@@ -1,0 +1,15 @@
+# this kustomization file is used to bootstrap the cluster, but
+# can't be used by Flux because it requires ksops
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+components:
+  - aws
+  - crossplane
+  #- bigbang
+  #- cert-manager
+  #- external-secrets
+  # - oncall
+  # - gh-runners
+  # - backstage
+

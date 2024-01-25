@@ -4,6 +4,7 @@
 
 
 # started with k3s
+#cat xp.yaml | limactl create --name=k3s --tty=false --debug --log-level debug -  | tee log
 cat xp.yaml | limactl create --name=k3s -
 limactl start k3s
 # echo "limactl shell k3s"

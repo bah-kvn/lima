@@ -1,0 +1,20 @@
+---
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+resources:
+- manifests/crb-default.yaml
+- manifests/gitrepository.yaml
+- manifests/helmrelease.yaml
+- manifests/ns.yaml
+- manifests/providers/aws-autoscaling.yaml
+- manifests/providers/aws-ec2.yaml
+- manifests/providers/aws-elbv2.yaml
+- manifests/providers/aws-iam.yaml
+- manifests/providers/aws-kms.yaml
+- manifests/providers/aws-rds.yaml
+- manifests/providers/aws-s3.yaml
+- manifests/providers/controllerConfig.yaml
+- manifests/providers/kubernetes-config.yaml
+- manifests/providers/kubernetes.yaml
+- manifests/providers/providerconfig-default.yaml
+- manifests/sync.yaml
